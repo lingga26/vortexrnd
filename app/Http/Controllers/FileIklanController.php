@@ -66,9 +66,10 @@ class FileIklanController extends Controller
             'file_video'    => 'required|file|mimes:mp4,avi,mov,mkv|max:122880',
         ], [
             'file_video.required' => 'File video wajib diupload.',
-            'file_video.file' => 'Harap upload file video yang valid.',
-            'file_video.mimes' => 'Format video harus MP4, AVI, MOV, atau MKV.',
-            'file_video.max' => 'Ukuran video tidak boleh lebih dari 120 MB.',
+            'file_video.file'     => 'Harap upload file video yang valid.',
+            'file_video.mimes'    => 'Format video harus MP4, AVI, MOV, atau MKV.',
+            'file_video.max'      => 'Ukuran video tidak boleh lebih dari 120 MB.',
+            'file_video.uploaded' => 'File video gagal terupload (melebihi limit upload PHP hosting).',
         ]);
 
         try {
@@ -164,6 +165,11 @@ class FileIklanController extends Controller
             'catatan'      => 'nullable|string',
             'keterangan'   => 'nullable|string',
             'file_video'   => 'nullable|file|mimes:mp4,avi,mov,mkv|max:122880',
+        ], [
+            'file_video.file'     => 'Harap upload file video yang valid.',
+            'file_video.mimes'    => 'Format video harus MP4, AVI, MOV, atau MKV.',
+            'file_video.max'      => 'Ukuran video tidak boleh lebih dari 120 MB.',
+            'file_video.uploaded' => 'File video gagal terupload (melebihi limit upload PHP hosting).',
         ]);
 
         try {
