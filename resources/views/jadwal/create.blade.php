@@ -28,7 +28,7 @@
         width: 44px;
         height: 44px;
         border-radius: 12px;
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         display: flex;
         align-items: center;
@@ -49,8 +49,8 @@
         gap: 12px;
         padding: 14px 18px;
         border-radius: 12px;
-        background-color: rgba(160, 104, 65, 0.1) !important;
-        border: 1px solid rgba(160, 104, 65, 0.25) !important;
+        background-color: var(--accent-soft) !important;
+        border: 1px solid var(--border) !important;
         color: var(--ink) !important;
         font-size: 0.88rem;
         margin-bottom: 24px;
@@ -88,7 +88,7 @@
     .jadwal-input:focus,
     .jadwal-textarea:focus {
         border-color: var(--accent) !important;
-        box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+        box-shadow: 0 0 0 3px var(--accent-soft) !important;
     }
 
     .video-section-top {
@@ -121,7 +121,7 @@
         padding: 10px 20px;
         border-radius: var(--radius-pill) !important;
         border: 1px solid var(--accent) !important;
-        background-color: rgba(160, 104, 65, 0.12) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         font-size: 0.84rem;
         font-weight: 800;
@@ -134,7 +134,7 @@
 
     .btn-add-slot:hover {
         background-color: var(--accent) !important;
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
         transform: translateY(-1px);
     }
 
@@ -207,7 +207,7 @@
 
     .video-search-input:focus {
         border-color: var(--accent) !important;
-        box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+        box-shadow: 0 0 0 3px var(--accent-soft) !important;
     }
 
     .video-search-input::placeholder {
@@ -249,12 +249,12 @@
     }
 
     .video-dropdown-item:hover {
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
     }
 
     .video-dropdown-item.selected-item {
-        background-color: rgba(160, 104, 65, 0.18) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
     }
 
@@ -262,7 +262,7 @@
         font-size: 0.74rem;
         padding: 3px 10px;
         border-radius: var(--radius-pill);
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         font-weight: 700;
         white-space: nowrap;
@@ -331,7 +331,7 @@
         border-radius: var(--radius-pill) !important;
         border: none;
         background: var(--accent) !important;
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
         font-weight: 700;
         font-size: 13px;
         text-transform: uppercase;
@@ -339,14 +339,14 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3) !important;
+        box-shadow: 0 4px 12px var(--accent-soft) !important;
         transition: all 0.2s ease;
     }
 
     .btn-simpan:hover {
-        filter: brightness(1.05);
+        background: var(--accent-hover) !important;
         transform: translateY(-2px);
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
     }
 </style>
 

@@ -38,115 +38,134 @@
 
     <style>
         /* ==========================================================================
-           🎨 1. DESIGN TOKENS (LIGHT & DARK MODE - COKLAT, PUTIH, CREAM)
+           🎨 1. DESIGN TOKENS (LIGHT: CLEAN SAAS | DARK: MIDNIGHT BROADCAST)
            ========================================================================== */
         :root {
             /* Surface */
-            --bg-page: #FAF6F0;          /* cream / warm soft ivory */
-            --bg-card: #FFFFFF;          /* putih bersih */
-            --border: #ECE4D8;           /* cream border lembut */
+            --bg-page: #F4F6FB;          /* Clean SaaS background */
+            --bg-card: #FFFFFF;          /* Putih bersih */
+            --bg-topbar: #FFFFFF;        /* Topbar putih bersih */
+            --border: #DBE2EE;           /* Border tabel & garis */
 
             /* Sidebar */
-            --sidebar-bg: #2D1810;       /* coklat espresso tua pekat */
-            --sidebar-icon: #FFFFFF;
-            --sidebar-active-bg: #DFCEBC;/* cream biscuit hangat */
-            --sidebar-active-fg: #2D1810;/* teks coklat pekat pada tombol aktif */
-            --sidebar-logout-bg: #BA5D42;/* terracotta / rust pill button */
+            --sidebar-bg: #111C30;       /* Sidebar navy gelap */
+            --sidebar-text: #C7D2E4;     /* Teks sidebar */
+            --sidebar-icon: #C7D2E4;
+            --sidebar-active-bg: #2563EB;/* Menu aktif background */
+            --sidebar-active-fg: #FFFFFF;/* Teks menu aktif */
+            --sidebar-logout-bg: #DC2626;/* Logout pill button */
             --sidebar-logout-fg: #FFFFFF;
 
-            /* Brand / accent */
-            --accent: #A06841;          /* coklat karamel / toffee hangat */
-            --accent-hover: #86532F;
-            --accent-soft: #DFCEBC;     /* cream biscuit */
-            --purple: #6B4423;          /* coklat tua pendamping */
-            --ink: #26160F;             /* teks utama: coklat pekat */
-            --muted: #827063;           /* teks sekunder: taupe / kopi susu */
-            --track: #EFE7DD;           /* pill / track: cream oatmeal */
+            /* Brand / Accent */
+            --accent: #2563EB;          /* Warna aksen utama (biru royal) */
+            --accent-hover: #1D4ED8;    /* Aksen hover tombol utama */
+            --accent-soft: rgba(37, 99, 235, 0.12); /* Soft blue tint */
+            --btn-primary-fg: #FFFFFF;
+            --purple: #4F46E5;          /* Indigo pendamping */
+            --ink: #16233A;             /* Teks utama */
+            --muted: #64748B;           /* Teks redup / sekunder */
+            --track: #E2E8F0;           /* Pill / track */
 
-            /* Kartu statistik (gradient cream, almond, sand, peach, terracotta) */
-            --stat-lavender: linear-gradient(135deg, #FBF8F4, #F4ECE1);
-            --stat-blue:     linear-gradient(135deg, #F7F0E6, #EFE3D3);
-            --stat-green:    linear-gradient(135deg, #F3E7D8, #E9DAC6);
-            --stat-amber:    linear-gradient(135deg, #F6E5D3, #EACFB8);
-            --stat-red:      linear-gradient(135deg, #F4DDCF, #E8C8B5);
+            /* Kartu statistik (Clean SaaS gradient) */
+            --stat-lavender: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            --stat-blue:     linear-gradient(135deg, #F0FDF4, #DCFCE7);
+            --stat-green:    linear-gradient(135deg, #ECFDF5, #D1FAE5);
+            --stat-amber:    linear-gradient(135deg, #FFFBEB, #FEF3C7);
+            --stat-red:      linear-gradient(135deg, #FEF2F2, #FEE2E2);
 
             /* Tombol panah stat card */
-            --stat-arrow-bg: #BA8F6E;
-            --stat-arrow-red-bg: #C2735B;
+            --stat-arrow-bg: #2563EB;
+            --stat-arrow-red-bg: #DC2626;
 
-            /* Badge persentase */
-            --badge-up-bg: #EAE2D5;   --badge-up-fg: #6E492B;
-            --badge-down-bg: #F7E1D8; --badge-down-fg: #B85D43;
+            /* Badge status (Terang) */
+            --badge-up-bg: rgba(22, 163, 74, 0.12);   --badge-up-fg: #16A34A;   /* Online / Sukses */
+            --badge-down-bg: rgba(220, 38, 38, 0.12); --badge-down-fg: #DC2626; /* Offline / Error */
+            --badge-warn-bg: rgba(217, 119, 6, 0.14); --badge-warn-fg: #D97706; /* Peringatan / Menunggu */
+            --badge-neutral-bg: rgba(100, 116, 139, 0.12); --badge-neutral-fg: #64748B; /* Netral */
 
             --radius-card: 20px;
             --radius-pill: 999px;
-            --shadow-card: 0 4px 16px rgba(45, 24, 16, 0.04), 0 1px 3px rgba(45, 24, 16, 0.02);
+            --shadow-card: 0 4px 16px rgba(17, 28, 48, 0.05), 0 1px 3px rgba(17, 28, 48, 0.03);
 
             /* Alias kompatibilitas view lama */
             --bg-body: var(--bg-page);
-            --bg-topbar: var(--bg-card);
             --border-main: var(--border);
             --border-sidebar: rgba(255, 255, 255, 0.08);
             --border-table: var(--border);
             --text-main: var(--ink);
             --text-muted: var(--muted);
-            --text-section: rgba(255, 255, 255, 0.42);
+            --text-section: rgba(199, 210, 228, 0.55);
             --bg-table-th: var(--bg-card);
             --bg-input: var(--bg-card);
-            --color-primary: #2D1810;
-            --color-accent: #A06841;
-            --color-success: #6E492B;
-            --color-warning: #B5895D;
-            --color-info: #827063;
-            --color-danger: #BA5D42;
+            --color-primary: #2563EB;
+            --color-accent: #2563EB;
+            --color-success: #16A34A;
+            --color-warning: #D97706;
+            --color-info: #0284C7;
+            --color-danger: #DC2626;
         }
 
         [data-theme="dark"] {
-            --bg-page: #150D09;          /* dark roast coffee */
-            --bg-card: #1F140E;          /* dark espresso card */
-            --border: #2D1D15;
+            /* Surface */
+            --bg-page: #0F1D33;          /* Midnight Broadcast */
+            --bg-card: #16283F;          /* Midnight card */
+            --bg-topbar: #0A1628;        /* Header/topbar dark */
+            --border: #27405F;           /* Border tabel & garis gelap */
 
-            --sidebar-bg: #1B0F0A;
-            --sidebar-active-bg: #DFCEBC;
-            --sidebar-active-fg: #1B0F0A;
-            --sidebar-logout-bg: #BA5D42;
+            /* Sidebar */
+            --sidebar-bg: #0A1628;       /* Sidebar deep midnight */
+            --sidebar-text: #8CA3BF;     /* Teks sidebar */
+            --sidebar-icon: #8CA3BF;
+            --sidebar-active-bg: #164E63;/* Menu aktif background */
+            --sidebar-active-fg: #FFFFFF;/* Teks menu aktif */
+            --sidebar-logout-bg: #DC2626;
             --sidebar-logout-fg: #FFFFFF;
 
-            --accent: #D4A373;
-            --accent-hover: #E2B689;
-            --accent-soft: #38241A;
-            --ink: #FBF6F0;
-            --muted: #A89587;
-            --track: #281A12;
+            /* Brand / Accent */
+            --accent: #22D3EE;          /* Warna aksen utama (cyan) */
+            --accent-hover: #38E1F5;    /* Aksen hover tombol utama */
+            --accent-soft: rgba(34, 211, 238, 0.15); /* Soft cyan tint */
+            --btn-primary-fg: #06202B;  /* Teks di atas tombol aksen utama */
+            --purple: #818CF8;
+            --ink: #E6EEF7;             /* Teks utama */
+            --muted: #8CA3BF;           /* Teks redup / sekunder */
+            --track: #101F35;           /* Pill / track gelap */
 
             /* Kartu statistik tema gelap */
-            --stat-lavender: linear-gradient(135deg, #241610, #1F130E);
-            --stat-blue:  #1F140E;
-            --stat-pink:  #1F140E;
-            --stat-red:   #1F140E;
-            --stat-green: #1F140E;
-            --stat-amber: #1F140E;
+            --stat-lavender: #16283F;
+            --stat-blue:  #16283F;
+            --stat-pink:  #16283F;
+            --stat-red:   #16283F;
+            --stat-green: #16283F;
+            --stat-amber: #16283F;
 
-            --stat-arrow-bg: #A06841;
-            --stat-arrow-red-bg: #BA5D42;
+            --stat-arrow-bg: #22D3EE;
+            --stat-arrow-red-bg: #F87171;
 
-            --badge-up-bg: rgba(212, 163, 115, 0.15);  --badge-up-fg: #E2B689;
-            --badge-down-bg: rgba(186, 93, 66, 0.22); --badge-down-fg: #E58267;
+            /* Badge status (Gelap) */
+            --badge-up-bg: rgba(52, 211, 153, 0.16);   --badge-up-fg: #34D399;   /* Online / Sukses */
+            --badge-down-bg: rgba(248, 113, 113, 0.18); --badge-down-fg: #F87171; /* Offline / Error */
+            --badge-warn-bg: rgba(251, 191, 36, 0.18);  --badge-warn-fg: #FBBF24; /* Peringatan */
+            --badge-neutral-bg: rgba(140, 163, 191, 0.18); --badge-neutral-fg: #8CA3BF; /* Netral */
 
             --shadow-card: none;
 
             /* Alias kompatibilitas tema gelap */
             --bg-body: var(--bg-page);
-            --bg-topbar: var(--bg-card);
             --border-main: var(--border);
             --border-sidebar: rgba(255, 255, 255, 0.08);
             --border-table: var(--border);
             --text-main: var(--ink);
             --text-muted: var(--muted);
-            --text-section: rgba(255, 255, 255, 0.42);
-            --bg-table-th: var(--bg-card);
-            --bg-input: #261711;
-            --color-primary: #D4A373;
+            --text-section: rgba(140, 163, 191, 0.55);
+            --bg-table-th: #16283F;
+            --bg-input: #0F1D33;
+            --color-primary: #22D3EE;
+            --color-accent: #22D3EE;
+            --color-success: #34D399;
+            --color-warning: #FBBF24;
+            --color-info: #38BDF8;
+            --color-danger: #F87171;
         }
 
         /* ==========================================================================
@@ -181,7 +200,7 @@
         }
 
         /* ==========================================================================
-           ☕ 3. FLOATING SIDEBAR (COKLAT GELAP #2D1810)
+           ⚡ 3. FLOATING SIDEBAR
            ========================================================================== */
         .sidebar {
             width: 250px;
@@ -197,7 +216,7 @@
             border-radius: 24px;
             z-index: 1000;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -212,14 +231,18 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: #2D1810;
+            background: var(--sidebar-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
             flex-shrink: 0;
             overflow: hidden;
-            border: 2px solid rgba(223, 206, 188, 0.3);
+            border: 2px solid var(--accent);
+        }
+        [data-theme="dark"] .sidebar-logo-circle {
+            border-color: #22D3EE;
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
         }
         .sidebar-logo-circle img {
             width: 100%;
@@ -240,7 +263,8 @@
         }
         .sidebar-brand-text .sub {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.55);
+            color: var(--sidebar-text);
+            opacity: 0.75;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
@@ -249,7 +273,7 @@
         .sidebar-user-box {
             margin: 0 14px 12px;
             padding: 10px 14px;
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -259,14 +283,14 @@
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: rgba(223, 206, 188, 0.2);
-            color: #DFCEBC;
+            background: var(--accent-soft);
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
             flex-shrink: 0;
-            border: 1px solid rgba(223, 206, 188, 0.3);
+            border: 1px solid var(--accent);
         }
         .sidebar-user-meta {
             overflow: hidden;
@@ -283,7 +307,7 @@
         }
         .sidebar-user-meta .role-tag {
             font-size: 10px;
-            color: #DFCEBC;
+            color: var(--accent);
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -305,7 +329,7 @@
             font-size: 10.5px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.42);
+            color: var(--text-section);
             font-weight: 800;
         }
 
@@ -315,7 +339,7 @@
             gap: 12px;
             padding: 10px 14px;
             margin: 4px 14px;
-            color: rgba(255, 255, 255, 0.82);
+            color: var(--sidebar-text);
             text-decoration: none;
             font-size: 13.5px;
             font-weight: 600;
@@ -327,14 +351,18 @@
             font-size: 15px;
             text-align: center;
             flex-shrink: 0;
+            color: var(--sidebar-icon);
             transition: transform 0.18s ease;
         }
         .sidebar-nav a:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #FFFFFF;
             transform: translateX(2px);
         }
-        /* Item Aktif: Cream / Biscuit #DFCEBC dengan teks coklat pekat */
+        .sidebar-nav a:hover:not(.active) i {
+            color: #FFFFFF;
+        }
+        /* Item Aktif */
         .sidebar-nav a.active {
             background: var(--sidebar-active-bg);
             color: var(--sidebar-active-fg) !important;
@@ -344,28 +372,28 @@
         .sidebar-nav a.active i {
             color: var(--sidebar-active-fg) !important;
         }
-        /* Tombol Logout: Terracotta / Rust Pill Button */
+        /* Tombol Logout */
         .sidebar-nav a.nav-logout {
             margin: 20px 14px 10px;
-            background: var(--sidebar-logout-bg, #BA5D42);
-            color: #FFFFFF !important;
+            background: var(--sidebar-logout-bg);
+            color: var(--sidebar-logout-fg) !important;
             font-weight: 700;
             border-radius: var(--radius-pill);
             padding: 12px 18px;
             display: flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 4px 12px rgba(186, 93, 66, 0.35);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
             transition: all 0.2s ease;
         }
         .sidebar-nav a.nav-logout i {
-            color: #FFFFFF !important;
+            color: var(--sidebar-logout-fg) !important;
         }
         .sidebar-nav a.nav-logout:hover {
-            background: #A84E35;
+            background: #B91C1C;
             color: #FFFFFF !important;
             transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(186, 93, 66, 0.45);
+            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.45);
         }
 
         /* ==========================================================================
@@ -384,7 +412,7 @@
 
         /* Topbar Melayang (Rounded Pill Card) */
         .topbar-card {
-            background: var(--bg-card);
+            background: var(--bg-topbar);
             border: 1px solid var(--border);
             border-radius: var(--radius-card);
             box-shadow: var(--shadow-card);
@@ -417,7 +445,7 @@
             font-size: 17px;
             font-weight: 800;
             letter-spacing: 0.5px;
-            color: #2D1810;
+            color: var(--ink);
         }
         [data-theme="dark"] .brand-heading {
             color: var(--accent);
@@ -480,13 +508,17 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: #2D1810;
+            background: var(--sidebar-bg);
             color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 18px;
-            box-shadow: 0 2px 8px rgba(45, 24, 16, 0.25);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border: 1.5px solid var(--border);
+        }
+        [data-theme="dark"] .topbar-user-avatar {
+            border-color: var(--accent);
         }
 
         /* Konten Halaman */
@@ -550,12 +582,12 @@
         }
 
         .table tbody tr:hover td, .table-pastel tbody tr:hover td, .table-vortex tbody tr:hover td {
-            background-color: rgba(160, 104, 65, 0.05) !important;
+            background-color: rgba(37, 99, 235, 0.04) !important;
         }
         [data-theme="dark"] .table tbody tr:hover td,
         [data-theme="dark"] .table-pastel tbody tr:hover td,
         [data-theme="dark"] .table-vortex tbody tr:hover td {
-            background-color: rgba(255, 255, 255, 0.03) !important;
+            background-color: rgba(34, 211, 238, 0.05) !important;
         }
 
         /* Tombol */
@@ -579,11 +611,12 @@
         }
         .btn-primary, .btn-success {
             background: var(--accent) !important;
-            color: #FFFFFF !important;
+            color: var(--btn-primary-fg, #FFFFFF) !important;
             border-color: var(--accent) !important;
         }
         .btn-primary:hover, .btn-success:hover {
-            filter: brightness(1.05);
+            background: var(--accent-hover) !important;
+            border-color: var(--accent-hover) !important;
         }
         .btn-warning {
             background: #f59e0b !important;
@@ -658,7 +691,7 @@
             font-weight: 800 !important;
         }
         .icon-title-box, .dist-icon-box, .jadwal-icon-box {
-            background: rgba(160, 104, 65, 0.12) !important;
+            background: var(--accent-soft) !important;
             color: var(--accent) !important;
             border-radius: 12px !important;
         }
@@ -680,20 +713,21 @@
         }
         .vortex-input-locked:focus, .jadwal-input:focus, .jadwal-textarea:focus, .dist-input:focus {
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+            box-shadow: 0 0 0 3px var(--accent-soft) !important;
             background: var(--bg-card) !important;
         }
         .btn-save-v, .dist-btn-submit, .jadwal-btn-submit {
             background: var(--accent) !important;
             border-color: var(--accent) !important;
-            color: #FFFFFF !important;
+            color: var(--btn-primary-fg, #FFFFFF) !important;
             border-radius: var(--radius-pill) !important;
             font-weight: 700 !important;
             border: none !important;
-            box-shadow: 0 4px 12px rgba(160, 104, 65, 0.28) !important;
+            box-shadow: 0 4px 12px var(--accent-soft) !important;
             cursor: pointer;
         }
         .btn-save-v:hover, .dist-btn-submit:hover, .jadwal-btn-submit:hover {
+            background: var(--accent-hover) !important;
             filter: brightness(1.05);
             transform: translateY(-1px);
         }
@@ -715,11 +749,14 @@
         .toolbar-vortex .btn-primary {
             background: var(--accent) !important;
             border-color: var(--accent) !important;
-            color: #FFFFFF !important;
+            color: var(--btn-primary-fg, #FFFFFF) !important;
             border-radius: var(--radius-pill) !important;
             font-weight: 700 !important;
-            box-shadow: 0 4px 12px rgba(160, 104, 65, 0.28) !important;
+            box-shadow: 0 4px 12px var(--accent-soft) !important;
             border: none !important;
+        }
+        .toolbar-vortex .btn-primary:hover {
+            background: var(--accent-hover) !important;
         }
         .toolbar-vortex .btn-secondary {
             background: var(--track) !important;
@@ -743,7 +780,7 @@
         .form-control:focus, .search-input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+            box-shadow: 0 0 0 3px var(--accent-soft) !important;
         }
 
         /* Notifikasi Alert */
@@ -761,12 +798,12 @@
         .alert-success {
             background: var(--badge-up-bg);
             color: var(--badge-up-fg);
-            border-color: rgba(160, 104, 65, 0.2);
+            border-color: rgba(22, 163, 74, 0.2);
         }
         .alert-danger {
             background: var(--badge-down-bg);
             color: var(--badge-down-fg);
-            border-color: rgba(239, 68, 68, 0.2);
+            border-color: rgba(220, 38, 38, 0.2);
         }
 
         /* Badges */
@@ -801,8 +838,8 @@
             font-size: 0.75rem;
         }
         .badge-vortex-cyan {
-            background: rgba(91, 33, 209, 0.12) !important;
-            color: var(--purple) !important;
+            background: var(--accent-soft) !important;
+            color: var(--accent) !important;
             padding: 4px 10px;
             border-radius: var(--radius-pill);
             font-weight: 700;
@@ -868,8 +905,8 @@
             color-scheme: dark;
         }
         [data-theme="dark"] select option {
-            background: #151516;
-            color: #FFFFFF;
+            background: #16283F;
+            color: #E6EEF7;
         }
         [data-theme="dark"] ::placeholder {
             color: var(--muted);
@@ -882,7 +919,7 @@
         }
         [data-theme="dark"] [style*="background:#f8f9fa"],
         [data-theme="dark"] [style*="background: #f8f9fa"] {
-            background: #1c1c1e !important;
+            background: #16283F !important;
             color: var(--ink) !important;
         }
 
@@ -995,7 +1032,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="brand-heading" style="display: flex; align-items: center; gap: 10px;">
-                    <img src="{{ asset('images/logo.png') }}" alt="VortexSign" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(45, 24, 16, 0.15); border: 1.5px solid rgba(160, 104, 65, 0.35);">
+                    <img src="{{ asset('images/logo.png') }}" alt="VortexSign" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(17, 28, 48, 0.12); border: 1.5px solid var(--accent);">
                     <span>ADMINPAGE</span>
                 </div>
                 <div class="realtime-clock-pill">

@@ -14,53 +14,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Instant Theme Loader -->
-    <script>
-        (function() {
-            try {
-                var saved = localStorage.getItem('theme');
-                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch(e) {}
-        })();
-    </script>
-
     <style>
         :root {
-            --bg-page: #FAF6F0;          /* cream / warm soft ivory */
-            --bg-card: #FFFFFF;          /* putih bersih */
-            --border: #ECE4D8;           /* cream border */
-            --sidebar-bg: #2D1810;       /* coklat espresso tua */
-            --accent: #A06841;           /* coklat karamel / toffee */
-            --accent-hover: #86532F;
-            --accent-soft: #DFCEBC;      /* cream biscuit */
-            --ink: #26160F;              /* coklat tua pekat */
-            --muted: #827063;            /* taupe / kopi susu */
-            --track: #EFE7DD;            /* cream oatmeal */
-            --badge-up-bg: #EAE2D5;
-            --badge-up-fg: #6E492B;
-            --badge-down-bg: #F7E1D8;
-            --badge-down-fg: #B85D43;
+            --bg-page: #0F1D33;          /* Deep tech navy */
+            --bg-card: #16283F;          /* Midnight card */
+            --border: #27405F;           /* Border garis tech */
+            --accent: #22D3EE;           /* Cyan aksen */
+            --accent-hover: #38E1F5;
+            --accent-blue: #2563EB;      /* Blue primary */
+            --accent-blue-hover: #1D4ED8;
+            --ink: #E6EEF7;              /* Teks utama */
+            --muted: #8CA3BF;            /* Teks redup */
+            --track: #0A1628;            /* Darkest navy */
             --radius-card: 24px;
             --radius-pill: 999px;
-            --shadow-card: 0 20px 45px rgba(45, 24, 16, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        [data-theme="dark"] {
-            --bg-page: #150D09;
-            --bg-card: #1F140E;
-            --border: #2D1D15;
-            --ink: #FBF6F0;
-            --muted: #A89587;
-            --track: #281A12;
-            --accent: #D4A373;
-            --accent-hover: #E2B689;
-            --badge-up-bg: rgba(212, 163, 115, 0.15);
-            --badge-up-fg: #E2B689;
-            --badge-down-bg: rgba(186, 93, 66, 0.22);
-            --badge-down-fg: #E58267;
-            --shadow-card: 0 20px 45px rgba(0, 0, 0, 0.45);
+            --shadow-card: 0 20px 45px rgba(10, 22, 40, 0.5), 0 2px 8px rgba(0, 0, 0, 0.25);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
@@ -75,25 +43,19 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Glows bernuansa Coklat Hangat & Karamel */
+        /* Ambient Glows bernuansa Modern Cyan & Royal Blue Tech */
         body::before, body::after {
             content: ""; position: absolute; border-radius: 50%; z-index: 1; filter: blur(120px); pointer-events: none;
         }
         body::before {
             width: 450px; height: 450px;
-            background: rgba(186, 143, 110, 0.16);
+            background: rgba(34, 211, 238, 0.12);
             top: -100px; right: -80px;
         }
         body::after {
             width: 420px; height: 420px;
-            background: rgba(45, 24, 16, 0.14);
+            background: rgba(37, 99, 235, 0.15);
             bottom: -100px; left: -80px;
-        }
-        [data-theme="dark"] body::before {
-            background: rgba(212, 163, 115, 0.10);
-        }
-        [data-theme="dark"] body::after {
-            background: rgba(45, 24, 16, 0.25);
         }
 
         .login-container {
@@ -109,11 +71,11 @@
         }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Strip aksen gradient coklat - karamel - cream */
+        /* Strip aksen gradient royal blue ke cyan */
         .login-accent-bar {
             height: 5px;
             width: 100%;
-            background: linear-gradient(90deg, #2D1810 0%, #A06841 50%, #DFCEBC 100%);
+            background: linear-gradient(90deg, #2563EB 0%, #22D3EE 100%);
         }
 
         .login-header {
@@ -125,9 +87,9 @@
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 16px;
-            border: 2.5px solid #BA8F6E;
-            box-shadow: 0 4px 16px rgba(45, 24, 16, 0.25);
-            background: #2D1810;
+            border: 2.5px solid var(--accent);
+            box-shadow: 0 4px 16px rgba(34, 211, 238, 0.25);
+            background: #0A1628;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -137,11 +99,8 @@
         }
         .login-header h1 {
             font-size: 26px; font-weight: 800;
-            color: #2D1810;
+            color: #E6EEF7;
             letter-spacing: -0.5px;
-        }
-        [data-theme="dark"] .login-header h1 {
-            color: #FBF6F0;
         }
         .login-header h1 span {
             color: var(--accent);
@@ -183,14 +142,14 @@
             border-radius: 14px;
             font-size: 14px;
             font-weight: 600;
-            background: var(--bg-card);
+            background: #0F1D33;
             color: var(--ink);
             outline: none;
             transition: all 0.2s ease;
         }
         .form-control:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.22);
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
         }
         .form-control:focus ~ i.input-icon {
             color: var(--accent);
@@ -210,7 +169,7 @@
             margin-bottom: 24px; font-size: 13px; color: var(--ink); font-weight: 600;
         }
         .remember-row input[type="checkbox"] {
-            accent-color: var(--accent); width: 16px; height: 16px; cursor: pointer;
+            accent-color: var(--accent-blue); width: 16px; height: 16px; cursor: pointer;
         }
 
         /* Lupa password */
@@ -225,8 +184,8 @@
         }
         .forgot-info {
             display: none; margin-bottom: 20px; padding: 12px 14px; border-radius: 12px;
-            background: var(--badge-up-bg); color: var(--badge-up-fg);
-            border-left: 4px solid var(--accent);
+            background: rgba(37, 99, 235, 0.15); color: #93C5FD;
+            border-left: 4px solid var(--accent-blue);
             font-size: 13px; font-weight: 600; align-items: center; gap: 8px;
         }
         .forgot-info.show { display: flex; animation: slideUp 0.25s ease-out; }
@@ -234,20 +193,20 @@
 
         .btn-login {
             width: 100%; padding: 14px;
-            background: #2D1810;
+            background: var(--accent-blue);
             color: #FFFFFF;
             border: none;
             border-radius: var(--radius-pill);
             font-size: 15px; font-weight: 800; letter-spacing: 0.3px;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(45, 24, 16, 0.35);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
             transition: all 0.2s ease;
             display: flex; align-items: center; justify-content: center; gap: 8px;
         }
         .btn-login:hover {
-            background: var(--accent);
+            background: var(--accent-blue-hover);
             transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(160, 104, 65, 0.45);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
         }
 
         .login-footer {
@@ -262,9 +221,9 @@
             font-weight: 600; display: flex; align-items: center; gap: 8px;
         }
         .alert-danger {
-            background: var(--badge-down-bg);
-            color: var(--badge-down-fg);
-            border-left: 4px solid #B85D43;
+            background: rgba(248, 113, 113, 0.18);
+            color: #F87171;
+            border-left: 4px solid #DC2626;
         }
     </style>
 </head>

@@ -9,7 +9,7 @@
     .pm-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--ink) !important; display: flex; align-items: center; gap: 8px; }
     .pm-card p { color: var(--muted) !important; font-size: 0.88rem; margin-bottom: 16px; line-height: 1.5; }
     .pm-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: none; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.85rem; cursor: pointer; color: #fff; margin: 0 8px 8px 0; transition: all 0.2s ease; }
-    .pm-aman { background: var(--accent) !important; color: #fff !important; box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3); }
+    .pm-aman { background: var(--accent) !important; color: var(--btn-primary-fg, #fff) !important; box-shadow: 0 4px 12px var(--accent-soft); }
     .pm-bahaya { background: #ef4444; }
     .pm-lokasi { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
     .pm-lokasi td { padding: 12px 14px; border-bottom: 1px solid var(--border) !important; color: var(--ink) !important; word-break: break-all; }

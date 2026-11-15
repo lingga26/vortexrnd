@@ -25,28 +25,28 @@
         padding: 14px 16px !important; border-bottom: 1px solid var(--border) !important;
         color: var(--ink) !important; font-weight: 600 !important; font-size: 0.85rem !important;
     }
-    .table-vortex tbody tr:hover td { background-color: rgba(160, 104, 65, 0.05) !important; }
+    .table-vortex tbody tr:hover td { background-color: rgba(37, 99, 235, 0.04) !important; }
 
     .btn-icon-square {
         width: 36px; height: 36px; padding: 0; display: inline-flex; align-items: center; justify-content: center;
         border-radius: var(--radius-pill) !important; font-size: 14px; transition: all 0.2s; border: none; text-decoration: none;
     }
-    .btn-edit-vortex { background-color: rgba(181, 137, 93, 0.18) !important; color: #9E6B47 !important; }
-    .btn-edit-vortex:hover { background-color: #B5895D !important; color: #fff !important; transform: translateY(-2px); }
-    .btn-delete-vortex { background-color: rgba(186, 93, 66, 0.14) !important; color: #BA5D42 !important; }
-    .btn-delete-vortex:hover { background-color: #BA5D42 !important; color: #fff !important; transform: translateY(-2px); }
-    .btn-user-vortex { background-color: rgba(160, 104, 65, 0.15) !important; color: var(--accent) !important; }
-    .btn-user-vortex:hover { background-color: var(--accent) !important; color: #fff !important; transform: translateY(-2px); }
-    .btn-hapus-vortex { background-color: rgba(186, 93, 66, 0.22) !important; color: #BA5D42 !important; cursor: pointer; }
-    .btn-hapus-vortex:hover { background-color: #BA5D42 !important; color: #fff !important; transform: translateY(-2px); }
+    .btn-edit-vortex { background-color: var(--badge-warn-bg) !important; color: var(--badge-warn-fg) !important; }
+    .btn-edit-vortex:hover { background-color: #D97706 !important; color: #fff !important; transform: translateY(-2px); }
+    .btn-delete-vortex { background-color: var(--badge-down-bg) !important; color: var(--badge-down-fg) !important; }
+    .btn-delete-vortex:hover { background-color: #DC2626 !important; color: #fff !important; transform: translateY(-2px); }
+    .btn-user-vortex { background-color: var(--accent-soft) !important; color: var(--accent) !important; }
+    .btn-user-vortex:hover { background-color: var(--accent) !important; color: var(--btn-primary-fg, #fff) !important; transform: translateY(-2px); }
+    .btn-hapus-vortex { background-color: var(--badge-down-bg) !important; color: var(--badge-down-fg) !important; cursor: pointer; }
+    .btn-hapus-vortex:hover { background-color: #DC2626 !important; color: #fff !important; transform: translateY(-2px); }
     .link-subdomain { color: var(--accent); font-weight: 700; text-decoration: none; word-break: break-all; }
     
-    .badge-vortex-green { background-color: var(--badge-up-bg); color: var(--badge-up-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(160, 104, 65, 0.25); }
-    .badge-vortex-soft { background-color: var(--badge-down-bg); color: var(--badge-down-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(186, 93, 66, 0.25); }
+    .badge-vortex-green { background-color: var(--badge-up-bg); color: var(--badge-up-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(22, 163, 74, 0.25); }
+    .badge-vortex-soft { background-color: var(--badge-down-bg); color: var(--badge-down-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(220, 38, 38, 0.25); }
 </style>
 
 <div class="toolbar-vortex">
-    <a href="{{ route('clients.create') }}" class="btn" style="background-color: var(--accent); color: #ffffff; border: none; padding: 12px 24px; border-radius: var(--radius-pill); font-weight: 700; box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3);">
+    <a href="{{ route('clients.create') }}" class="btn" style="background-color: var(--accent); color: var(--btn-primary-fg, #ffffff); border: none; padding: 12px 24px; border-radius: var(--radius-pill); font-weight: 700; box-shadow: 0 4px 12px var(--accent-soft);">
         <i class="fas fa-plus mr-1"></i> Tambah Client
     </a>
 </div>

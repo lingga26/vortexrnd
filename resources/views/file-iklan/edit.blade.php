@@ -12,14 +12,14 @@
     }
     .vortex-header-form { padding: 24px 24px 16px 24px; border-bottom: 1px solid var(--border) !important; display: flex; align-items: center; }
     .vortex-header-form h5 { margin: 0; font-weight: 800; color: var(--ink) !important; font-size: 1.25rem; display: flex; align-items: center; }
-    .icon-title-box { width: 42px; height: 42px; background: rgba(160, 104, 65, 0.15) !important; color: var(--accent) !important; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; }
+    .icon-title-box { width: 42px; height: 42px; background: var(--accent-soft) !important; color: var(--accent) !important; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px; }
     .vortex-body-form { padding: 30px 24px; }
     .vortex-label-locked { font-size: 11px; font-weight: 800; color: var(--muted) !important; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; display: block; }
     .vortex-input-locked { width: 100% !important; display: block !important; padding: 13px 16px; border: 1px solid var(--border) !important; border-radius: 12px !important; font-size: 14px; font-weight: 600; background: var(--bg-card) !important; color: var(--ink) !important; transition: all 0.2s ease; box-sizing: border-box; }
-    .vortex-input-locked:focus { outline: none; border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important; background: var(--bg-card) !important; }
+    .vortex-input-locked:focus { outline: none; border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-soft) !important; background: var(--bg-card) !important; }
     .vortex-btn-locked { padding: 12px 28px; border-radius: var(--radius-pill) !important; font-weight: 700; font-size: 13px; text-transform: uppercase; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; cursor: pointer; text-decoration: none; }
-    .btn-save-v { background: var(--accent) !important; color: #ffffff !important; box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3) !important; }
-    .btn-save-v:hover { filter: brightness(1.05); transform: translateY(-2px); color: #ffffff; }
+    .btn-save-v { background: var(--accent) !important; color: var(--btn-primary-fg, #ffffff) !important; box-shadow: 0 4px 12px var(--accent-soft) !important; }
+    .btn-save-v:hover { background: var(--accent-hover) !important; transform: translateY(-2px); color: var(--btn-primary-fg, #ffffff); }
     .btn-cancel-v { background: var(--track) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; }
     .btn-cancel-v:hover { background: var(--border) !important; transform: translateY(-2px); color: var(--ink); }
     .vortex-form-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; width: 100%; }

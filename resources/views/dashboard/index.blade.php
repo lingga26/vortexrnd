@@ -79,28 +79,32 @@
         align-items: center;
         justify-content: center;
         font-size: 15px;
-        background: rgba(255, 255, 255, 0.85);
-        box-shadow: 0 1px 3px rgba(45, 24, 16, 0.05);
-        color: #2D1810;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 1px 3px rgba(17, 28, 48, 0.08);
+        color: #16233A;
     }
     [data-theme="dark"] .stat-icon-circle {
-        background: rgba(255, 255, 255, 0.12);
-        color: #DFCEBC;
+        background: rgba(255, 255, 255, 0.08);
+        color: #22D3EE;
     }
 
     .icon-tone-purple,
     .icon-tone-blue,
     .icon-tone-green,
-    .icon-tone-amber,
+    .icon-tone-amber {
+        color: #16233A !important;
+    }
     .icon-tone-red {
-        color: #2D1810 !important;
+        color: #DC2626 !important;
     }
     [data-theme="dark"] .icon-tone-purple,
     [data-theme="dark"] .icon-tone-blue,
     [data-theme="dark"] .icon-tone-green,
-    [data-theme="dark"] .icon-tone-amber,
+    [data-theme="dark"] .icon-tone-amber {
+        color: #22D3EE !important;
+    }
     [data-theme="dark"] .icon-tone-red {
-        color: #DFCEBC !important;
+        color: #F87171 !important;
     }
 
     /* Tombol Aksi Bulat (↗) */
@@ -108,18 +112,27 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: var(--stat-arrow-bg, #BA8F6E);
+        background: var(--stat-arrow-bg, #2563EB);
         color: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 12px;
-        box-shadow: 0 2px 6px rgba(186, 143, 110, 0.35);
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
         transition: transform 0.2s ease;
     }
     .stat-card-red .stat-card-arrow-btn {
-        background: var(--stat-arrow-red-bg, #C2735B);
-        box-shadow: 0 2px 6px rgba(194, 115, 91, 0.35);
+        background: var(--stat-arrow-red-bg, #DC2626);
+        color: #FFFFFF;
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.35);
+    }
+    [data-theme="dark"] .stat-card-arrow-btn {
+        color: #06202B;
+        box-shadow: 0 2px 6px rgba(34, 211, 238, 0.35);
+    }
+    [data-theme="dark"] .stat-card-red .stat-card-arrow-btn {
+        color: #FFFFFF;
+        box-shadow: 0 2px 6px rgba(248, 113, 113, 0.35);
     }
     .stat-card-item:hover .stat-card-arrow-btn {
         transform: rotate(45deg);
@@ -362,7 +375,7 @@
         height: 7px;
         border-radius: 50%;
         background: var(--accent);
-        box-shadow: 0 0 0 2px rgba(160, 104, 65, 0.3);
+        box-shadow: 0 0 0 2px var(--accent-soft);
     }
 
     /* Badges Angka di Tabel */
@@ -383,14 +396,9 @@
         opacity: 0.9;
     }
     .rekap-pill-green  { background: var(--badge-up-bg); color: var(--badge-up-fg); }
-    .rekap-pill-orange { background: rgba(245, 158, 11, 0.14); color: #d97706; }
+    .rekap-pill-orange { background: var(--badge-warn-bg); color: var(--badge-warn-fg); }
     .rekap-pill-red    { background: var(--badge-down-bg); color: var(--badge-down-fg); }
     .rekap-pill-track  { background: var(--track); color: var(--ink); }
-
-    [data-theme="dark"] .rekap-pill-orange {
-        background: rgba(245, 158, 11, 0.2);
-        color: #fbbf24;
-    }
 
     .area-name-link {
         color: var(--ink) !important;
@@ -724,13 +732,9 @@
         if (legendContainer) legendContainer.innerHTML = '';
 
         const dark = isDarkTheme();
-        const colorCoffee  = '#331C13'; // espresso gelap
-        const colorMilk    = '#8C5E3C'; // milk chocolate
-        const colorCaramel = '#C4A17B'; // caramel tan hangat
-        const colorCream   = '#E8D9C7'; // cream lembut
-        const colorTrack   = dark ? '#281A12' : '#EFE7DD';
+        const colorTrack   = dark ? '#101F35' : '#DBE2EE';
 
-        const palette = [colorCoffee, colorMilk, colorCaramel, colorCream, '#BA5D42', '#A06841'];
+        const palette = ['#2563EB', '#0284C7', '#0D9488', '#38BDF8', '#6366F1', '#22D3EE'];
         const totalSegments = 72; // Rapat membentuk cincin donat utuh
         const total = totalToko > 0 ? totalToko : areaValues.reduce((a, b) => a + b, 0);
 
@@ -810,25 +814,30 @@
 
     function renderBarCharts() {
         const dark = isDarkTheme();
-        const colorMuted = dark ? '#A89587' : '#827063';
-        const colorBorder = dark ? '#2D1D15' : '#ECE4D8';
-        const colorTooltipBg = dark ? '#2D1D15' : '#26160F';
+        const colorMuted = dark ? '#8CA3BF' : '#64748B';
+        const colorBorder = dark ? '#27405F' : '#DBE2EE';
+        const colorTooltipBg = dark ? '#0A1628' : '#16233A';
 
-        // 🎨 Palet Warna Coklat, Cream & Terracotta Sesuai Referensi:
-        const colorSudah      = '#A67C52'; // warm caramel brown
-        const colorSudahHover = '#8C643E';
+        // 🎨 Palet Warna Status Sesuai Ketentuan Baru:
+        // Sudah Update: hijau #16A34A (terang) / #34D399 (gelap)
+        const colorSudah      = dark ? '#34D399' : '#16A34A';
+        const colorSudahHover = dark ? '#10B981' : '#15803D';
 
-        const colorBelum      = '#DFC09A'; // soft biscuit / cream
-        const colorBelumHover = '#CCA97E';
+        // Belum Update: kuning/amber #D97706 (terang) / #FBBF24 (gelap)
+        const colorBelum      = dark ? '#FBBF24' : '#D97706';
+        const colorBelumHover = dark ? '#F59E0B' : '#B45309';
 
-        const colorTidak      = '#B85D43'; // warm terracotta / rust
-        const colorTidakHover = '#9E4A32';
+        // Tidak Diketahui: abu #64748B (terang) / #8CA3BF (gelap)
+        const colorTidak      = dark ? '#8CA3BF' : '#64748B';
+        const colorTidakHover = dark ? '#94A3B8' : '#475569';
 
-        const colorOnline      = '#7E5233'; // milk chocolate
-        const colorOnlineHover = '#6B4428';
+        // Online: hijau #16A34A (terang) / #34D399 (gelap)
+        const colorOnline      = dark ? '#34D399' : '#16A34A';
+        const colorOnlineHover = dark ? '#10B981' : '#15803D';
 
-        const colorOffline     = '#B85D43'; // warm terracotta
-        const colorOfflineHover= '#9E4A32';
+        // Offline: merah #DC2626 (terang) / #F87171 (gelap)
+        const colorOffline     = dark ? '#F87171' : '#DC2626';
+        const colorOfflineHover= dark ? '#EF4444' : '#B91C1C';
 
         // 1. Chart Status Update Konten
         // [Sudah Update = Caramel, Belum Update = Cream, Tidak Diketahui = Terracotta]

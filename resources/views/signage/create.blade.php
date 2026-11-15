@@ -17,7 +17,7 @@
         margin: 0; font-weight: 800; color: var(--ink) !important; font-size: 1.25rem; display: flex; align-items: center;
     }
     .icon-title-box {
-        width: 42px; height: 42px; background: rgba(160, 104, 65, 0.15) !important; color: var(--accent) !important; 
+        width: 42px; height: 42px; background: var(--accent-soft) !important; color: var(--accent) !important; 
         border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;
     }
     .vortex-body-form { padding: 30px 24px; }
@@ -33,7 +33,7 @@
         transition: all 0.2s ease; box-sizing: border-box;
     }
     .vortex-input-locked:focus {
-        outline: none; border-color: var(--accent) !important; box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important; background: var(--bg-card) !important;
+        outline: none; border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-soft) !important; background: var(--bg-card) !important;
     }
     .vortex-input-error {
         border-color: #ef4444 !important; background: rgba(239, 68, 68, 0.08) !important;
@@ -50,8 +50,8 @@
         letter-spacing: 0.5px; border: none; display: inline-flex; align-items: center; justify-content: center;
         gap: 8px; transition: all 0.2s ease; cursor: pointer; text-decoration: none;
     }
-    .btn-save-v { background: var(--accent) !important; color: #ffffff !important; box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3) !important; }
-    .btn-save-v:hover { filter: brightness(1.05); transform: translateY(-2px); color: #ffffff; }
+    .btn-save-v { background: var(--accent) !important; color: var(--btn-primary-fg, #ffffff) !important; box-shadow: 0 4px 12px var(--accent-soft) !important; }
+    .btn-save-v:hover { background: var(--accent-hover) !important; transform: translateY(-2px); color: var(--btn-primary-fg, #ffffff); }
     .btn-cancel-v { background: var(--track) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; }
     .btn-cancel-v:hover { background: var(--border) !important; transform: translateY(-2px); color: var(--ink); }
     

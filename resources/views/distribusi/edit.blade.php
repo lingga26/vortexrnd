@@ -31,7 +31,7 @@
         width: 44px;
         height: 44px;
         border-radius: 12px;
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         display: flex;
         align-items: center;
@@ -80,7 +80,7 @@
 
     .dist-input:focus {
         border-color: var(--accent) !important;
-        box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+        box-shadow: 0 0 0 3px var(--accent-soft) !important;
     }
 
     /* Section Judul Jadwal & Tombol Tambah */
@@ -111,7 +111,7 @@
         padding: 8px 18px;
         border-radius: var(--radius-pill) !important;
         border: 1px solid var(--accent) !important;
-        background-color: rgba(160, 104, 65, 0.12) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         font-size: 0.82rem;
         font-weight: 800;
@@ -124,7 +124,7 @@
 
     .btn-add-row:hover {
         background-color: var(--accent) !important;
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
         transform: translateY(-1px);
     }
 
@@ -198,7 +198,7 @@
 
     .jadwal-search-input:focus {
         border-color: var(--accent) !important;
-        box-shadow: 0 0 0 3px rgba(160, 104, 65, 0.18) !important;
+        box-shadow: 0 0 0 3px var(--accent-soft) !important;
     }
 
     /* Dropdown Menu Hasil Pencarian */
@@ -236,12 +236,12 @@
     }
 
     .jadwal-dropdown-item:hover {
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
     }
 
     .jadwal-dropdown-item.selected-item {
-        background-color: rgba(160, 104, 65, 0.18) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
     }
 
@@ -249,7 +249,7 @@
         font-size: 0.74rem;
         padding: 3px 10px;
         border-radius: var(--radius-pill);
-        background-color: rgba(160, 104, 65, 0.15) !important;
+        background-color: var(--accent-soft) !important;
         color: var(--accent) !important;
         font-weight: 700;
         margin-left: 8px;
@@ -392,7 +392,7 @@
         border-radius: var(--radius-pill) !important;
         border: none;
         background: var(--accent) !important;
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
         font-weight: 700;
         font-size: 13px;
         text-transform: uppercase;
@@ -400,14 +400,14 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3) !important;
+        box-shadow: 0 4px 12px var(--accent-soft) !important;
         transition: all 0.2s ease;
     }
 
     .btn-simpan:hover {
-        filter: brightness(1.05);
+        background: var(--accent-hover) !important;
         transform: translateY(-2px);
-        color: #ffffff !important;
+        color: var(--btn-primary-fg, #ffffff) !important;
     }
 
     @media (max-width: 768px) {

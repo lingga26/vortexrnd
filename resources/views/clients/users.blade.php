@@ -22,17 +22,17 @@
         padding: 14px 16px !important; border-bottom: 1px solid var(--border) !important;
         color: var(--ink) !important; font-weight: 600 !important; font-size: 0.85rem !important;
     }
-    .table-vortex tbody tr:hover td { background-color: rgba(160, 104, 65, 0.05) !important; }
+    .table-vortex tbody tr:hover td { background-color: rgba(37, 99, 235, 0.04) !important; }
 
-    .badge-vortex-green { background-color: var(--badge-up-bg); color: var(--badge-up-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(160, 104, 65, 0.25); }
-    .badge-vortex-soft { background-color: var(--badge-down-bg); color: var(--badge-down-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(186, 93, 66, 0.25); }
-    .badge-vortex-warn { background-color: rgba(181, 137, 93, 0.18); color: #9E6B47; padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(181, 137, 93, 0.3); }
+    .badge-vortex-green { background-color: var(--badge-up-bg); color: var(--badge-up-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(22, 163, 74, 0.25); }
+    .badge-vortex-soft { background-color: var(--badge-down-bg); color: var(--badge-down-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(220, 38, 38, 0.25); }
+    .badge-vortex-warn { background-color: var(--badge-warn-bg); color: var(--badge-warn-fg); padding: 5px 12px; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.75rem; border: 1px solid rgba(217, 119, 6, 0.25); }
 
     .btn-reset-vortex {
-        background: rgba(181, 137, 93, 0.18); color: #9E6B47; border: 1px solid rgba(181, 137, 93, 0.3); border-radius: var(--radius-pill); padding: 8px 16px;
+        background: var(--badge-warn-bg); color: var(--badge-warn-fg); border: 1px solid rgba(217, 119, 6, 0.25); border-radius: var(--radius-pill); padding: 8px 16px;
         font-weight: 800; font-size: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;
     }
-    .btn-reset-vortex:hover { background: #B5895D; color: #fff; transform: translateY(-1px); }
+    .btn-reset-vortex:hover { background: #D97706; color: #fff; transform: translateY(-1px); }
     .btn-back-vortex {
         background: var(--track) !important; color: var(--ink) !important; border: 1px solid var(--border) !important; border-radius: var(--radius-pill); padding: 10px 20px;
         font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s;
@@ -41,7 +41,7 @@
 
     .reset-box {
         margin-bottom: 18px; padding: 18px 20px; border-radius: 14px; border-left: 5px solid var(--accent);
-        background: rgba(160, 104, 65, 0.10); color: var(--ink); border: 1px solid var(--border); border-left-width: 5px;
+        background: var(--accent-soft); color: var(--ink); border: 1px solid var(--border); border-left-width: 5px;
     }
     .reset-box .pw {
         display: inline-block; margin: 8px 10px 8px 0; padding: 10px 16px; border-radius: 10px;
@@ -49,8 +49,8 @@
         font-weight: 800; letter-spacing: 2px; user-select: all; border: 1px solid var(--border);
     }
     .reset-box button {
-        background: var(--accent); color: #fff; border: none; border-radius: var(--radius-pill); padding: 10px 18px; font-weight: 700; cursor: pointer;
-        box-shadow: 0 4px 12px rgba(160, 104, 65, 0.3); transition: all 0.2s;
+        background: var(--accent); color: var(--btn-primary-fg, #fff); border: none; border-radius: var(--radius-pill); padding: 10px 18px; font-weight: 700; cursor: pointer;
+        box-shadow: 0 4px 12px var(--accent-soft); transition: all 0.2s;
     }
     .reset-box button:hover { background: var(--accent-hover); transform: translateY(-1px); }
 </style>

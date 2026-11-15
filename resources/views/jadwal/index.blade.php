@@ -40,10 +40,10 @@
         font-size: 0.88rem !important;
     }
     .table-vortex tbody tr:hover td {
-        background-color: rgba(160, 104, 65, 0.05) !important;
+        background-color: rgba(37, 99, 235, 0.04) !important;
     }
     [data-theme="dark"] .table-vortex tbody tr:hover td {
-        background-color: rgba(255, 255, 255, 0.03) !important;
+        background-color: rgba(34, 211, 238, 0.05) !important;
     }
 
     /* Modal Styling */
@@ -54,8 +54,8 @@
     .video-item-list li { padding: 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
     
     .video-item-list li.video-clickable { cursor: pointer; border-radius: 10px; transition: background .15s; }
-    .video-item-list li.video-clickable:hover { background: rgba(160, 104, 65, 0.08); }
-    .video-item-list li.video-clickable.playing { background: rgba(160, 104, 65, 0.15); }
+    .video-item-list li.video-clickable:hover { background: var(--accent-soft); }
+    .video-item-list li.video-clickable.playing { background: var(--accent-soft); }
     .video-player-box { display: none; margin-top: 14px; background: #000; border-radius: 12px; overflow: hidden; }
     .video-player-box video, .video-player-box img { width: 100%; max-height: 340px; display: block; object-fit: contain; }
     .video-player-title { display: none; margin-top: 10px; font-weight: 800; font-size: 13px; color: var(--ink); }

@@ -45,10 +45,10 @@
         vertical-align: middle !important;
     }
     .table-vortex tbody tr:hover td {
-        background-color: rgba(160, 104, 65, 0.05) !important;
+        background-color: rgba(37, 99, 235, 0.04) !important;
     }
     [data-theme="dark"] .table-vortex tbody tr:hover td {
-        background-color: rgba(255, 255, 255, 0.03) !important;
+        background-color: rgba(34, 211, 238, 0.05) !important;
     }
     .table-vortex th:first-child, .table-vortex td:first-child { padding-left: 20px !important; }
     .table-vortex th:last-child, .table-vortex td:last-child { padding-right: 20px !important; }
@@ -86,7 +86,7 @@
         <span class="badge-vortex-cyan">Area: {{ request('area') }}</span>
     @endif
     @if(request('status_konten'))
-        <span class="{{ request('status_konten') === 'Sudah Terbaru' ? 'badge-vortex-green' : 'badge-vortex-soft' }}" style="{{ request('status_konten') === 'Belum Terbaru' ? 'background:rgba(245, 158, 11, 0.15);color:#d97706;' : '' }}">
+        <span class="{{ request('status_konten') === 'Sudah Terbaru' ? 'badge-vortex-green' : 'badge-vortex-soft' }}" style="{{ request('status_konten') === 'Belum Terbaru' ? 'background: var(--badge-warn-bg); color: var(--badge-warn-fg);' : '' }}">
             Status: {{ request('status_konten') }}
         </span>
     @endif
@@ -136,7 +136,7 @@
                         @if(($item->status_konten ?? '') == 'Sudah Terbaru')
                             <span class="badge-vortex-green">Sudah Terbaru</span>
                         @else
-                            <span class="badge-vortex-soft" style="background: rgba(245, 158, 11, 0.15); color: #d97706;">{{ $item->status_konten ?? 'Belum Terbaru' }}</span>
+                            <span class="badge-vortex-soft" style="background: var(--badge-warn-bg); color: var(--badge-warn-fg);">{{ $item->status_konten ?? 'Belum Terbaru' }}</span>
                         @endif
                     </td>
                     <td>{{ $item->tanggal_aktivasi ? $item->tanggal_aktivasi->format('d/m/Y') : '-' }}</td>

@@ -13,11 +13,11 @@
     .table-vortex { width: 100% !important; border-collapse: collapse !important; margin: 0 !important; }
     .table-vortex th { background-color: var(--bg-card) !important; color: var(--muted) !important; font-weight: 800 !important; border-bottom: 1px solid var(--border) !important; text-transform: uppercase !important; font-size: 0.75rem !important; letter-spacing: 0.8px !important; padding: 16px 20px !important; vertical-align: middle !important; }
     .table-vortex td { padding: 14px 20px !important; border-bottom: 1px solid var(--border) !important; color: var(--ink) !important; font-weight: 600 !important; font-size: 0.88rem !important; }
-    .table-vortex tbody tr:hover td { background-color: rgba(160, 104, 65, 0.05) !important; cursor: pointer; }
-    [data-theme="dark"] .table-vortex tbody tr:hover td { background-color: rgba(255, 255, 255, 0.03) !important; }
+    .table-vortex tbody tr:hover td { background-color: rgba(37, 99, 235, 0.04) !important; cursor: pointer; }
+    [data-theme="dark"] .table-vortex tbody tr:hover td { background-color: rgba(34, 211, 238, 0.05) !important; }
     .table-vortex input[type=checkbox] { transform: scale(1.25); cursor: pointer; accent-color: var(--accent); }
     .vortex-btn-locked { padding: 10px 22px; border-radius: var(--radius-pill); font-weight: 800; font-size: 13px; text-transform: uppercase; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; text-decoration: none; }
-    .btn-save-v { background: var(--accent); color: #fff; box-shadow: 0 4px 10px rgba(160, 104, 65, 0.3); }
+    .btn-save-v { background: var(--accent); color: var(--btn-primary-fg, #fff); box-shadow: 0 4px 10px var(--accent-soft); }
     .btn-back-v { background: var(--track); color: var(--ink); border: 1px solid var(--border); }
     .btn-cancel-v { background: #ef4444; color: #fff; }
     .badge-jam-sama { background: rgba(239, 68, 68, 0.15); color: #dc2626; padding: 4px 10px; border-radius: var(--radius-pill); font-weight: 800; font-size: .72rem; border: 1px solid rgba(239, 68, 68, 0.3); display: inline-block; }

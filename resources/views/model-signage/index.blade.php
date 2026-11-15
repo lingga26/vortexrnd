@@ -50,10 +50,10 @@
         text-align: left;
     }
     .table-vortex tbody tr:hover td {
-        background-color: rgba(160, 104, 65, 0.05) !important;
+        background-color: rgba(37, 99, 235, 0.04) !important;
     }
     [data-theme="dark"] .table-vortex tbody tr:hover td {
-        background-color: rgba(255, 255, 255, 0.03) !important;
+        background-color: rgba(34, 211, 238, 0.05) !important;
     }
     .col-aksi { width: 120px !important; text-align: center !important; }
 </style>

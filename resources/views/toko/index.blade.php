@@ -46,10 +46,10 @@
         vertical-align: middle !important;
     }
     .table-vortex tbody tr:hover td {
-        background-color: rgba(160, 104, 65, 0.05) !important;
+        background-color: rgba(37, 99, 235, 0.04) !important;
     }
     [data-theme="dark"] .table-vortex tbody tr:hover td {
-        background-color: rgba(255, 255, 255, 0.03) !important;
+        background-color: rgba(34, 211, 238, 0.05) !important;
     }
     .table-vortex th.text-left, .table-vortex td.text-left { text-align: left !important; }
     .table-vortex th.text-center, .table-vortex td.text-center { text-align: center !important; }
@@ -92,13 +92,13 @@
         font-size: 12px !important;
         font-weight: 800 !important;
         letter-spacing: 0.3px !important;
-        border: 1px solid rgba(160, 104, 65, 0.22) !important;
+        border: 1px solid rgba(22, 163, 74, 0.22) !important;
         line-height: 1.2 !important;
     }
     [data-theme="dark"] .badge-vortex-jam {
-        background: rgba(160, 104, 65, 0.22) !important;
-        color: #DFCEBC !important;
-        border-color: rgba(160, 104, 65, 0.35) !important;
+        background: var(--badge-up-bg) !important;
+        color: var(--badge-up-fg) !important;
+        border-color: rgba(52, 211, 153, 0.35) !important;
     }
     .sim-card-meta {
         display: inline-flex;
