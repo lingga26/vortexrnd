@@ -311,6 +311,11 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 145px;
+            display: block;
         }
 
         /* Navigasi Menu */
@@ -978,14 +983,25 @@
             </div>
         </div>
 
-        <!-- Profil Singkat Super Admin -->
+        <!-- Profil Singkat Pengguna (Admin / Client) -->
+        @php
+            $authUser = Auth::user();
+            $authClient = $authUser?->client ?? \App\Support\Tenant::current();
+            $isSuperAdmin = $authUser?->isSuperAdmin() || empty($authUser?->client_id);
+        @endphp
         <div class="sidebar-user-box">
-            <div class="sidebar-user-avatar">
-                <i class="fas fa-user-shield"></i>
+            <div class="sidebar-user-avatar" title="{{ $isSuperAdmin ? 'Super Admin' : ($authClient->nama ?? 'Client') }}">
+                <i class="fas {{ $isSuperAdmin ? 'fa-user-shield' : 'fa-store' }}"></i>
             </div>
             <div class="sidebar-user-meta">
-                <strong>{{ Auth::user()->name ?? 'Super Admin' }}</strong>
-                <span class="role-tag">adminisign</span>
+                <strong title="{{ $authUser->name ?? ($isSuperAdmin ? 'Super Admin' : 'Client') }}">{{ $authUser->name ?? ($isSuperAdmin ? 'Super Admin' : 'Client') }}</strong>
+                <span class="role-tag" title="{{ $isSuperAdmin ? 'SUPER ADMIN' : ($authClient->nama ?? 'CLIENT') }}">
+                    @if($isSuperAdmin)
+                        SUPER ADMIN
+                    @else
+                        CLIENT • {{ $authClient->nama ?? 'SIGNAGE' }}
+                    @endif
+                </span>
             </div>
         </div>
 
@@ -1033,7 +1049,7 @@
                 </button>
                 <div class="brand-heading" style="display: flex; align-items: center; gap: 10px;">
                     <img src="{{ asset('images/logo.png') }}" alt="VortexSign" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(17, 28, 48, 0.12); border: 1.5px solid var(--accent);">
-                    <span>ADMINPAGE</span>
+                    <span>{{ $isSuperAdmin ? 'ADMINPAGE' : ($authClient->nama ?? 'CLIENT DASHBOARD') }}</span>
                 </div>
                 <div class="realtime-clock-pill">
                     <i class="far fa-clock" style="color: var(--muted);"></i>
@@ -1058,8 +1074,8 @@
                 </div>
 
                 <!-- Avatar Pengguna -->
-                <div class="topbar-user-avatar" title="{{ Auth::user()->name ?? 'Super Admin' }}">
-                    <i class="fas fa-user-circle"></i>
+                <div class="topbar-user-avatar" title="{{ $authUser->name ?? ($isSuperAdmin ? 'Super Admin' : 'Client') }}">
+                    <i class="fas {{ $isSuperAdmin ? 'fa-user-shield' : 'fa-user-circle' }}"></i>
                 </div>
             </div>
         </header>
