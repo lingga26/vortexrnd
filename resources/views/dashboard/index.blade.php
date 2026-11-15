@@ -734,7 +734,30 @@
         const dark = isDarkTheme();
         const colorTrack   = dark ? '#101F35' : '#DBE2EE';
 
-        const palette = ['#2563EB', '#0284C7', '#0D9488', '#38BDF8', '#6366F1', '#22D3EE'];
+        // 🎨 Palet warna kategori berbeda kontras tinggi agar setiap daerah jelas berbeda warnanya
+        const paletteLight = [
+            '#2563EB', // Biru Royal
+            '#F59E0B', // Amber / Oranye
+            '#10B981', // Hijau Emerald
+            '#8B5CF6', // Ungu Violet
+            '#F43F5E', // Merah Koral
+            '#06B6D4', // Biru Cyan
+            '#EC4899', // Pink Fuchsia
+            '#6366F1'  // Biru Indigo
+        ];
+
+        const paletteDark = [
+            '#38BDF8', // Sky Blue
+            '#FBBF24', // Amber Terang
+            '#34D399', // Mint / Emerald Terang
+            '#A78BFA', // Ungu Terang
+            '#FB7185', // Rose Terang
+            '#22D3EE', // Cyan Terang
+            '#F472B6', // Pink Terang
+            '#818CF8'  // Indigo Terang
+        ];
+
+        const palette = dark ? paletteDark : paletteLight;
         const totalSegments = 72; // Rapat membentuk cincin donat utuh
         const total = totalToko > 0 ? totalToko : areaValues.reduce((a, b) => a + b, 0);
 
@@ -753,8 +776,12 @@
                     allocated++;
                 }
             });
-            while (segmentColors.length < totalSegments) {
-                segmentColors.push(colorTrack);
+            // Genapkan segmen jika pembulatan kurang dari totalSegments
+            if (segmentColors.length > 0 && segmentColors.length < totalSegments) {
+                const lastCol = segmentColors[segmentColors.length - 1];
+                while (segmentColors.length < totalSegments) {
+                    segmentColors.push(lastCol);
+                }
             }
         }
 
