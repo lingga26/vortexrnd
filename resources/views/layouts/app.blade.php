@@ -9,7 +9,7 @@
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}">
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -975,7 +975,7 @@
         <!-- Brand Header Logo -->
         <div class="sidebar-brand-box">
             <div class="sidebar-logo-circle">
-                <img src="{{ asset('images/logo.png') }}" alt="VortexSign Logo">
+                <img src="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}" alt="VortexSign Logo">
             </div>
             <div class="sidebar-brand-text">
                 <span class="title">VORTEXSIGN</span>
@@ -1048,7 +1048,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="brand-heading" style="display: flex; align-items: center; gap: 10px;">
-                    <img src="{{ asset('images/logo.png') }}" alt="VortexSign" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(17, 28, 48, 0.12); border: 1.5px solid var(--accent);">
+                    <img src="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}" alt="VortexSign" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(17, 28, 48, 0.12); border: 1.5px solid var(--accent);">
                     <span>{{ $isSuperAdmin ? 'ADMINPAGE' : ($authClient->nama ?? 'CLIENT DASHBOARD') }}</span>
                 </div>
                 <div class="realtime-clock-pill">

@@ -9,7 +9,7 @@
     <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}">
     
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -288,7 +288,7 @@
 <div class="topbar">
     <div style="display:flex; align-items:center;">
         <span class="brand" style="display:inline-flex; align-items:center; gap:8px;">
-            <img src="{{ asset('images/logo.png') }}" alt="VortexSign" style="width:26px; height:26px; border-radius:50%; object-fit:cover; border: 1.5px solid var(--accent);">
+            <img src="{{ asset('images/logo.png') . '?v=' . filemtime(public_path('images/logo.png')) }}" alt="VortexSign" style="width:26px; height:26px; border-radius:50%; object-fit:cover; border: 1.5px solid var(--accent);">
             <span>ADMINPORTAL</span>
         </span>
         <nav class="nav-admin">
